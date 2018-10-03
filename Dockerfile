@@ -74,7 +74,7 @@ ENV ROS_PACKAGE_PATH=/root/ros_catkin_ws:$ROS_PACKAGE_PATH
 ENV ROS_WORKSPACE=/root/ros_catkin_ws
 
 ## tensorflow
-RUN pip install tensorflow-gpu==1.9.0
-
-RUN pip install gym
+RUN pip install tensorflow-gpu==1.9.0\
+                gym\
+                keras
 

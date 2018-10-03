@@ -21,6 +21,8 @@ echo $OPTIONS
 
 read -e -p "Enter command:" COMMAND
 
+xhost +local:docker
+
 NV_GPU=$devs nvidia-docker run -it --rm \
   --env=QT_X11_NO_MITSHM=1 \
   --env=DISPLAY=$DISPLAY \
