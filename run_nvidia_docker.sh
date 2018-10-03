@@ -20,3 +20,4 @@ nvidia-docker run -it --rm \
   #--volume="/etc/passwd:/etc/passwd:ro" \
   #--volume="/etc/shadow:/etc/shadow:ro" \
   #--volume="/etc/sudoers.d:/etc/sudoers.d:ro" \
+  #--volume="/usr/local/cuda:/usr/local/cuda" \
