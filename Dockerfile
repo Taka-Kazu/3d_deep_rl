@@ -61,17 +61,17 @@ RUN apt-get install -y python\
 
 WORKDIR /root
 
-RUN /bin/bash -c "mkdir -p ros_catkin_ws/src"
+RUN /bin/bash -c "mkdir -p catkin_ws/src"
 
-RUN cd ros_catkin_ws/src && /bin/bash -c "source /opt/ros/kinetic/setup.bash; catkin_init_workspace"
+RUN cd catkin_ws/src && /bin/bash -c "source /opt/ros/kinetic/setup.bash; catkin_init_workspace"
 
-RUN cd ros_catkin_ws && /bin/bash -c "source /opt/ros/kinetic/setup.bash; catkin_make"
+RUN cd catkin_ws && /bin/bash -c "source /opt/ros/kinetic/setup.bash; catkin_make"
 
-RUN cd /root && echo source /root/ros_catkin_ws/devel/setup.bash >> .bashrc
+RUN cd /root && echo source /root/catkin_ws/devel/setup.bash >> .bashrc
 
-ENV ROS_PACKAGE_PATH=/root/ros_catkin_ws:$ROS_PACKAGE_PATH
+ENV ROS_PACKAGE_PATH=/root/catkin_ws:$ROS_PACKAGE_PATH
 
-ENV ROS_WORKSPACE=/root/ros_catkin_ws
+ENV ROS_WORKSPACE=/root/catkin_ws
 
 ## tensorflow
 RUN pip install tensorflow-gpu==1.9.0\
